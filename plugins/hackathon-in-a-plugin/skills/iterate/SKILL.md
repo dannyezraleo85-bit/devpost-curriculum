@@ -7,7 +7,7 @@ description: "This skill should be used when the user says "/iterate" or wants t
 
 Read `skills/hackathon-guide/SKILL.md` for your overall behavior, then follow this command.
 
-You are a collaborative partner. The learner has graduated from the structured process — now they're working with the agent more directly, which is the whole point. This command is completely optional. Don't pressure anyone to iterate — if the build is done and they're happy, go straight to `/evaluate`.
+You are a collaborative partner. The learner has graduated from the structured process — now they're working with the agent more directly, which is the whole point. This command is completely optional. Don't pressure anyone to iterate — if the build is done and they're happy, go straight to `/reflect`.
 
 ## Prerequisites
 
@@ -15,9 +15,10 @@ ALL original checklist items in `docs/checklist.md` must be complete. If any are
 
 ## Before You Start
 
-- Read `docs/checklist.md` — confirm all original items are checked.
-- Read `docs/prd.md` — especially "What we'd add with more time." These are natural starting points.
-- Read `docs/spec.md` — understand the current architecture.
+- **Read everything in `docs/` first.** Before doing anything else, open the `docs/` folder and read every file in it. This is critical — downstream commands depend on upstream artifacts, and the agent must have full context before starting any work. Do not skip this step.
+- Confirm all original items in `docs/checklist.md` are checked.
+- Pay special attention to `docs/prd.md` — especially "What we'd add with more time." These are natural starting points.
+- Note the current architecture from `docs/spec.md`.
 - Read `process-notes.md` — what happened during the build? Any issues, surprises, or things the learner mentioned wanting to fix?
 - Skim the current app code to understand what actually got built (it may have drifted from the spec).
 - Append a `## /iterate` section to `process-notes.md` (or `## Iteration N` if this isn't the first run).
@@ -64,15 +65,15 @@ Append these to `docs/checklist.md` under an `## Iteration N` header (where N in
 
 ### 5. Hand Off to /build
 
-"Your iteration items are added to the checklist. Run `/build` in a fresh chat to start working through them."
+"Your iteration items are added to the checklist. Clear your chat and start a fresh session, then run `/build` to start working through them."
 
-The learner runs /build exactly as before — same loop, same verification, same knowledge checks. The iteration items just happen to be at the bottom of checklist.md under a new section header.
+The learner runs /build exactly as before — same mode, same verification preferences, same comprehension checks (if opted in). The iteration items just happen to be at the bottom of checklist.md under a new section header.
 
 ### 6. After Iteration Items Are Complete
 
 When the learner comes back (or if they run /iterate again), note what was done:
 
-"Want to keep going? Describe the next improvement and we'll do another round. Or run `/evaluate` when you're done."
+"Want to keep going? Describe the next improvement and we'll do another round. Or run `/reflect` when you're done."
 
 ### Process Notes
 
@@ -89,4 +90,4 @@ Everything from the hackathon-guide SKILL.md interaction rules applies here, plu
 - **This should feel lighter than the structured commands.** The learner has earned autonomy. Be a collaborator, not a guide.
 - **The review pass is quick.** 2-3 observations, not a full audit. Don't make the learner feel like they're back in planning mode.
 - **Respect their time.** If they have 20 minutes left before the hackathon ends, don't propose a 5-item checklist. Scale to the time available.
-- **No concept naming.** The teaching happened in the earlier commands. This is just working together.
+- **Keep handoff brief.** Just tell them to clear chat and run `/build`.

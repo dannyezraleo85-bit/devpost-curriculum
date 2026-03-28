@@ -1,13 +1,13 @@
 ---
-description: "Run when the user says /build — execute the next unchecked checklist item"
+description: "Run when the user says /build — execute checklist items in the mode chosen during /checklist (step-by-step or autonomous)"
 alwaysApply: false
 ---
 
-# /build — Build the Next Step
+# /build — Build Your App
 
 Also follow the rules in hackathon-guide.mdc for overall behavior.
 
-You are an executor with teaching moments. The intelligence is in `checklist.md` — read it and follow the learner's chosen methodology. The learner stays actively involved.
+You are an executor. Read checklist.md Build Preferences header to determine mode and preferences.
 
 ## Prerequisites
 
@@ -15,20 +15,40 @@ You are an executor with teaching moments. The intelligence is in `checklist.md`
 
 ## Before You Start
 
-Read checklist.md — find first unchecked item. Read Build Preferences header. Read the spec ref and relevant PRD section. Read process-notes.md for continuity. If ALL items checked, skip to "When Complete."
+**Read everything in `docs/` first** — before doing anything else, open the `docs/` folder and read every file in it. Do not skip this step. Pay special attention to checklist.md (Build Preferences + find first unchecked item), learner-profile.md. Read process-notes.md. If ALL items checked, skip to "When Complete."
 
-## The Loop (one item per session)
+## Step-by-Step Mode (one item per fresh session)
 
-1. **Announce** — Tell learner what's next: title, what it does, why it's in this position. 2-3 sentences.
-2. **Build It** — Execute the "What to build" field. Adapt communication to check-in cadence (learning-driven / balanced / speed-run).
-3. **Learner Verifies** — Follow the "Verify" field exactly. Wait for their response. Fix issues before moving on.
-4. **Knowledge Check** — One short question about what was just built. Expects a few-word answer. About behavior, not syntax. If they're lost, brief explanation then move on.
-5. **Mark Complete and Log** — Check the box in checklist.md. Commit if preferences say to. Append to process-notes.md.
-6. **Hand Off** — "Start a fresh chat and run `/build` again for the next one."
+1. **Announce** — Title, what it does, why it's in this position. 2-3 sentences.
+2. **Build It** — Execute the "What to build" field. Adapt communication to check-in cadence.
+3. **Verify (if opted in)** — Follow the "Verify" field exactly. Wait for learner response. Fix issues before moving on.
+4. **Comprehension Check (if opted in)** — Use AskUserQuestion tool to present a precise multiple-choice question (3-4 options) about what was just built. Must have a single unambiguous correct answer. Specific to the code/behavior in this step, not vague or conceptual. This is the ONLY place multiple choice is used.
+5. **Mark Complete and Log** — Check box in checklist.md. Commit per preferences. Append to process-notes.md.
+6. **Hand Off** — "Clear your context and start a fresh chat, then run `/build` again. A clean context gives the agent maximum room."
+
+## Autonomous Mode (single invocation, full checklist)
+
+You are the orchestrator. For each unchecked item:
+1. **Dispatch to subagent** — Use the `Agent` tool. Give it: the checklist item (all five fields), the relevant spec.md section, relevant prd.md section, instructions to build and commit.
+2. **Collect result** — Note what was built and any issues.
+3. **Mark complete** in checklist.md.
+4. **Checkpoint (if verification enabled)** — Every 3-4 items: brief summary of what was built, what to look for, ask learner to check. "Everything look good? Press Y to continue, or let me know what's off."
+5. **If verification off** — Build straight through. Summary at the end.
+
+No per-item process notes in autonomous mode. Summary at the end.
+
+## When Something Breaks (Both Modes)
+
+1. **Stop immediately.** Don't skip or power through.
+2. **Tell the learner** what happened and what you tried.
+3. **If changes since last clean state**, propose reverting to the last checkpoint/completed item.
+4. **Think holistically** — maybe the checklist needs revising. Propose specific edits.
+5. **Get learner agreement**, update checklist.md, then resume.
+
+The checklist is a living document. Plans adapt when they meet reality.
 
 ## When Complete
 
-All items checked: "Your build is complete — every checklist item is done."
+All items checked: "Your build is complete."
 - ✓/△ feedback on build smoothness, learner engagement, PRD alignment
-- Concept naming: "You did **human-agent collaboration**, not vibe coding. The agent handles volume; you handle judgment."
-- Suggest `/iterate` to polish or `/evaluate` for feedback
+- Handoff: suggest `/iterate` to polish or clear chat and run `/reflect` to wrap up

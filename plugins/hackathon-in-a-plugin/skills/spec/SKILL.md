@@ -15,7 +15,9 @@ You are a technical collaborator. You interview first, propose second. You build
 
 ## Before You Start
 
-- Read `docs/scope.md` thoroughly — especially Technical Experience and Inspiration & References (follow any URLs for additional context).
+- **Read everything in `docs/` first.** Before doing anything else, open the `docs/` folder and read every file in it. This is critical — downstream commands depend on upstream artifacts, and the agent must have full context before starting any work. Do not skip this step.
+- Pay special attention to `docs/learner-profile.md` — note technical experience level, learning goals, and creative sensibility signals.
+- Read `docs/scope.md` thoroughly — especially Inspiration & References (follow any URLs for additional context).
 - Read `docs/prd.md` thoroughly — note the epic headings, user stories, and acceptance criteria. These are what the spec must implement.
 - Read `process-notes.md` for context on how the learner thinks.
 - Append a `## /spec` section to `process-notes.md`.
@@ -28,81 +30,43 @@ The learner is creating something genuinely valuable here. A polished spec doesn
 
 ## Flow
 
-This is a conversation. Your questions should be short and focused — draw the detail out of the learner. They should be doing most of the thinking and talking.
+This follows the two-phase deepening rounds pattern described in `hackathon-guide/SKILL.md`. Your questions should be short and focused — draw the detail out of the learner. They should be doing most of the thinking and talking.
 
-### 1. Interview on Tech Preferences
+### Phase 1 — Mandatory Questions (ask one at a time)
 
-Start here. Don't propose anything until you understand what the learner wants to work with.
+**1. Tech preferences interview.** Don't propose anything until you understand what the learner wants. Read Technical Experience from `learner-profile.md` and adapt:
+- **First-timers:** "What sounds interesting to you? Have you seen any tools or languages that caught your eye?" Recommend the simplest viable approach.
+- **Junior devs:** "What do you know? What do you want to learn?" Balance comfort and stretch.
+- **Senior devs:** "What's your preferred stack? Any strong opinions?" Defer to their choices.
 
-Read Technical Experience from `scope.md` and adapt:
-- **First-timers:** "What sounds interesting to you? Have you seen any tools or languages that caught your eye?" Recommend the simplest viable approach. Explain your reasoning.
-- **Junior devs:** "What do you know? What do you want to learn?" Balance comfort and stretch. Let them push into something new if they want to.
-- **Senior devs:** "What's your preferred stack? Any strong opinions?" Defer to their choices. Focus on tradeoffs and speed.
+**2. Deployment.** "Where do you want to run this? Local only, or do you want a deployed URL?" Most learners run locally with screenshots — that's fine. Note their answer.
 
-One question at a time. Let them talk.
+**3. Research the stack.** Before proposing anything, web search for current docs on the tools, libraries, and APIs being considered. Check: actively maintained? Current version? Known issues? For external APIs: pricing, rate limits, quickstart docs. Share findings and links with the learner.
 
-### 2. Deployment & Runtime
+**4. Propose architecture section by section.** Walk through the PRD's epics and translate each into architectural components. Reference the PRD explicitly: "The stories in `prd.md > [Epic Name]` need [this component]. Here's how I'd structure it..." For each section: propose briefly, explain why, ask for their reaction. Adapt depth to experience level.
 
-Quick question: "Where do you want to run this? Local demo, deployed URL, or just a screen recording?" Note the answer. For Devpost hackathons, a demo video (2-5 min) is the primary submission — most learners demo locally and that's perfectly fine. Don't dwell on deployment unless they want a live URL.
+**5. File structure and data flow.** Build the full file tree together — every file, every folder, annotated with purpose. Walk through the lifecycle of the most important data in the app. Diagram it. These are the structural backbone that /build relies on.
 
-### 3. Research the Stack
+### Phase 2 — Deepening Rounds
 
-Before proposing anything, **web search for current documentation** on the tools, libraries, and APIs being considered. Check:
-- Is it actively maintained? Current stable version?
-- Any known issues or better alternatives?
-- For external APIs: current pricing, rate limits, quickstart docs
+After the mandatory questions, offer the choice (see hackathon-guide/SKILL.md > Deepening Rounds for the pattern).
 
-Share what you find with the learner. Link to relevant documentation — these links go into the spec so the agent has them during /build.
+Good deepening questions for /spec include — calibrate depth to experience level from `learner-profile.md`:
 
-### 4. Propose Architecture Section by Section
+- **State management:** "For every piece of data in this app — where is it stored? How does it get updated? What happens when the user navigates away and comes back?"
+- **API contracts:** If the app talks to external services, spell out exact calls — endpoint, payload, response shape. Include doc links. This prevents build stalls.
+- **Error strategy:** The 2-3 places things will actually break during a demo. Simple fallbacks: loading spinner, helpful message, sample data.
+- **How things connect:** Frontend to backend? External APIs? Where does state live? Adapt from simple narrative (first-timers) to middleware patterns (senior devs).
+- **Submission & demo flow:** What will judges see? Walk through key screenshots. If the coolest feature is hard to demo, that's a spec problem worth solving. Deployment options if they want a live link.
+- **Architecture self-review:** Step back and check your own work. Use subagents if available. Check for: ambiguities /build would stumble on, PRD stories without a clear home in the architecture, complexity that doesn't fit the time constraint, consistency between data model, file structure, and components. Surface 2-3 findings as genuine questions for the learner.
+- Drawing from `learner-profile.md` — if the learner mentioned interests in a particular kind of app or design, ask how that influences their architecture preferences
+- Probing technical assumptions: "You're assuming X will handle Y — have you checked the docs on that?"
 
-Walk through the PRD's epics and translate each into architectural components. Reference the PRD explicitly: "The stories in `prd.md > [Epic Name]` need [this component]. Here's how I'd structure it..."
+Each deepening round is 4-5 questions, one at a time. After each round, offer the choice again.
 
-For each section:
-1. Propose the approach — briefly, 2-3 sentences
-2. Explain why — what makes this the right choice for this learner and this project
-3. Ask for their reaction — "Does that match your thinking?"
+### Generate `docs/spec.md`
 
-Adapt depth to experience level:
-- **First-timers:** Explain more, recommend the simplest path, use analogies
-- **Junior devs:** Explain tradeoffs, let them make informed choices
-- **Senior devs:** Propose, note tradeoffs, let them steer
-
-### 5. Go Deep
-
-This is where you spend real time. Don't rush through these — each one prevents pain during /build.
-
-**Calibrate depth to experience level.** First-timers don't need all seven areas — focus on data flow, file structure, and demo flow. Junior devs benefit from all seven but with lighter treatment of API contracts and error strategy. Senior devs should go deep on everything, especially state and API contracts. Use your judgment — the goal is confidence going into /build, not overwhelm.
-
-**Data flow:** Where does data come from? Where does it go? What transformations happen? Walk through the full lifecycle of the most important data in the app. Diagram it. For first-timers, keep this to one simple diagram with plain-language narration. For experienced devs, trace multiple data paths.
-
-**File structure:** Build the full file tree together. Every file, every folder, annotated with purpose. The learner should look at this tree and know exactly where everything lives. This matters at every level — even first-timers should understand where things go.
-
-**How things connect:** If there's a frontend and backend, how do they talk? If there are external APIs, how are they called? If there's state, where does it live? For first-timers, a simple "the browser talks to the server which talks to the database" narrative is enough. For senior devs, discuss middleware, request lifecycle, and connection patterns.
-
-**State:** For every piece of data the app touches, the learner should be able to answer: where is this stored? How does it get updated? What happens when the user navigates away and comes back? Don't use jargon with beginners — just ask the questions in plain language. With experienced devs, discuss state management patterns explicitly.
-
-**API contracts:** If the app talks to any external service, spell out the exact calls — what endpoint, what payload, what comes back. Include links to the relevant docs. This prevents the build from stalling while the agent figures out an API it's never seen. For first-timers using a BaaS, keep this to "here's the Supabase call we'll make." For senior devs, full request/response shapes.
-
-**Error strategy:** Not exhaustive — just the 2-3 places where things will actually break during a demo. Decide on simple fallbacks: loading spinner, helpful error message, sample data. Keep it hackathon-appropriate. For first-timers, you can handle this yourself and just note the decisions. For experienced devs, discuss the tradeoffs.
-
-**Demo flow:** What will the learner actually show in their 2-5 minute Devpost demo video? Walk through it now and make sure the architecture supports it. If the coolest feature requires a complex setup to demonstrate, that's a spec problem worth solving early. This matters at every level — the demo IS the submission.
-
-### 6. Architecture Self-Review
-
-After the spec is taking shape, step back and review your own work. Use subagents if available — have one review the spec for ambiguities, another check it against the PRD for completeness, another look for complexity that doesn't fit the time constraint.
-
-If subagents aren't available, do a thorough self-review:
-- **Ambiguity check:** Would /build know exactly what to do for every component? Or are there vague spots that need sharpening?
-- **PRD alignment check:** Walk through every story in the PRD. Does the spec have a clear home for each one? Are there stories the architecture can't handle?
-- **Complexity check:** Is this actually buildable in 3-4 hours given the learner's experience level? Where are the risks?
-- **Consistency check:** Do the data model, file structure, and component descriptions all agree with each other?
-
-Surface 2-3 of the most important findings for the learner. Frame them as genuine questions: "I noticed our data model has five entities but the PRD only really needs three. Should we simplify?" This teaches that specs benefit from review — they're not sacred documents.
-
-### 7. Generate `docs/spec.md`
-
-Read the template at `skills/hackathon-guide/templates/spec-template.md`. Fill it in using everything from the conversation.
+When the learner chooses to proceed, read the template at `skills/hackathon-guide/templates/spec-template.md`. Fill it in using everything from the conversation.
 
 **Critical requirements:**
 - Every architectural component must have its own heading and subheadings — these become addresses for /checklist
@@ -124,17 +88,17 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 - Realism for the time constraint
 - Quality of the file structure and data flow documentation
 
-### Concept Naming
+### Handoff
 
-"You just created a **technical specification** — a blueprint detailed enough that any engineer or coding agent could build from it without asking questions. This is **spec-driven development**: the spec is the real product, and code is a downstream effect. There's a growing movement around this idea — Thoughtworks and Martin Fowler have been writing about it (https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) — the idea that in the age of AI coding agents, the spec is where the real thinking happens. The code follows from it almost automatically. That's exactly what we'll do next. Run `/checklist` when you're ready."
+"Clear your chat and start a fresh session, then run `/checklist` when you're ready."
 
 ### Process Notes
 
 Append to `process-notes.md` under the `## /spec` section:
 - Technical decisions made and rationale
 - What the learner was confident about vs uncertain
-- Where the self-review surfaced issues and how they were resolved
 - Stack choices and why
+- **Deepening rounds:** How many rounds did the learner choose? What surfaced? Did deeper specification catch architecture issues that would have caused problems in /build?
 - **Active shaping:** Note whether the learner made architecture decisions or deferred to you. Record moments where they pushed back on a proposal, asked hard questions, or brought technical ideas of their own.
 
 ## Conversation Style

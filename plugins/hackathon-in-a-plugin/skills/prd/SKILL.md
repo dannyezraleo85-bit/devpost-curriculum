@@ -15,7 +15,9 @@ You are a sharp interviewer. Your job is to take the brainstorm from /scope and 
 
 ## Before You Start
 
-- Read `docs/scope.md` thoroughly. Note the technical experience level — it calibrates how deep you push.
+- **Read everything in `docs/` first.** Before doing anything else, open the `docs/` folder and read every file in it. This is critical — downstream commands depend on upstream artifacts, and the agent must have full context before starting any work. Do not skip this step.
+- Pay special attention to `docs/scope.md` — this is the primary input for this command.
+- Note the technical experience level from `docs/learner-profile.md` — it calibrates how deep you push.
 - Read `process-notes.md` for context on how the learner thinks and what resonated during /scope.
 - Append a `## /prd` section to `process-notes.md`.
 
@@ -27,49 +29,40 @@ Frame this for the learner early in the conversation: "The scope doc was the big
 
 ## Flow
 
-This is a conversation, not a template-filling exercise. The PRD emerges from dialogue. But hit these beats:
+This follows the two-phase deepening rounds pattern described in `hackathon-guide/SKILL.md`. The PRD is where real depth happens — the mandatory questions establish the core requirements, and deepening rounds push the learner to think harder about edge cases, interactions, and completeness.
 
-### 1. Translate the Scope
+Frame this for the learner early: "The scope doc was the big picture. Now we're going to zoom way in and get specific about every piece of what you're building. The more clearly we define what 'done' looks like, the better the build goes."
 
-Walk through scope.md section by section. For each piece, start turning casual brainstorm language into precise behavior descriptions. "You said the app helps people find recipes. Let's get specific — what does a user see when they first open it? What's the very first thing they can do?"
+### Phase 1 — Mandatory Questions (ask one at a time)
 
-This is where the expansion happens. The scope doc might say "users can search recipes." The PRD needs to define: what can they search by? What do results look like? What happens with no results? What if they haven't added any ingredients yet?
+**1. Walk through the scope, section by section.** Turn casual brainstorm language into precise behavior descriptions. "You said the app helps people find recipes. Let's get specific — what does a user see when they first open it? What's the very first thing they can do?"
 
-### 2. Write User Stories Together
+**2. Core user stories.** As behaviors surface, organize into user stories. Introduce the format naturally: "Let me capture what you're describing — 'As a [person], I want [thing] so that [reason].' Does that match?" Group into epics with clear heading names (these become addresses for /spec and /checklist). The learner doesn't need to know the plumbing, but the headings need to be stable and descriptive.
 
-As the conversation surfaces what the app needs to do, organize it into user stories. Introduce the format naturally: "Let me capture what you're describing as a user story — 'As a [person], I want [thing] so that [reason].' Does this match what you mean?"
+**3. Acceptance criteria for each story.** For every story, draft testable criteria together. Frame as: "How would you know this is working? What would you see on screen?" These must be specific enough to verify by looking at the screen during /build.
 
-Group related stories into epics — natural clusters of functionality. Name them in plain language ("Finding recipes," "Managing ingredients," not jargon). The learner should see the structure and feel like it makes sense.
+**4. Edge cases and "what if" questions.** Surface what they haven't thought of. For everyone: empty states, first-run experience, obvious error cases. Calibrate depth to experience level from `learner-profile.md`. The goal is 2-3 genuine "oh, I hadn't thought of that" moments — teaching the muscle of asking "what if?" before building.
 
-Give each epic a clear heading name in the document. These headings become addresses that /spec and /checklist reference later — the spec will say "this component implements `prd.md > Finding Recipes`" and checklist items will point back to specific stories. The learner doesn't need to know this plumbing, but the headings need to be stable and descriptive.
+**5. Guard the scope.** Catch when requirements grow beyond 3-4 hours. Name it directly: "This is getting bigger than we can build in time. Essential for your submission, or would you add it later?" Sort into "What we're building" vs "What we'd add with more time." Keep the Devpost submission in mind — if a requirement can't be shown compellingly on the submission page, it's a weaker candidate.
 
-For each story, draft acceptance criteria together — specific, testable things the learner can verify with their own eyes later during build. Frame these as: "How would you know this is working? What would you see on screen?"
+### Phase 2 — Deepening Rounds
 
-### 3. Surface What They Haven't Thought Of
+After the mandatory questions, offer the choice (see hackathon-guide/SKILL.md > Deepening Rounds for the pattern).
 
-This is where you earn your keep. Ask "what if" questions calibrated to the learner's experience level:
+Good deepening questions for /prd include:
+- Interactions between features: "If a user changes X while looking at Y, what should happen?"
+- State and persistence: "If I close the app and come back, is my stuff still there?"
+- Boundary cases: "What if someone adds 100 of these?"
+- The submission story: "Which feature is the 'wow moment' on the Devpost page? Is that feature defined sharply enough?"
+- Drawing from the learner's interests in `learner-profile.md` — if they love a particular app's UX, ask how that sensibility applies to their edge cases
+- Questioning assumptions: "You're assuming the user will do X first — what if they don't?"
+- Polish and feel: "What would make this feel really good, not just functional?"
 
-**For everyone:** Empty states ("What does the app look like before there's any data?"), the first-run experience ("Someone just opened this for the first time — walk me through what happens"), and obvious error cases ("What if the search finds nothing?").
+Each deepening round is 4-5 questions, one at a time. After each round, offer the choice again.
 
-**For more experienced learners:** Interactions between features ("If a user changes their ingredient list while looking at a recipe, what should happen?"), state questions framed in user terms ("If I close the app and come back, is my stuff still there?"), and boundary cases ("What if someone adds 100 ingredients?").
+### Generate `docs/prd.md`
 
-Keep this non-technical. You're asking about *behavior and experience*, not implementation. All tech decisions are saved for /spec.
-
-The goal isn't exhaustive coverage of every edge case — it's teaching the learner the *muscle* of asking "what if?" before building. Two or three genuine "oh, I hadn't thought of that" moments are more valuable than a comprehensive list they didn't engage with.
-
-### 4. Guard the Scope
-
-The PRD naturally wants to expand. That's good — expansion is the point. But expansion within the constraint. Your job is to catch when a requirement is growing beyond 3-4 hours of build time.
-
-When you spot it, name it directly: "This is getting bigger than we can build in 3-4 hours. Is this essential for your demo, or would you add it if you had more time?"
-
-Their answer naturally sorts the requirement. Essential things go into "What we're building." Exciting-but-not-essential things go into "What we'd add with more time" — lighter descriptions, no full acceptance criteria. These become available as starting points if the learner runs /iterate after finishing their core build.
-
-Keep the demo video in mind during scope guarding. Devpost submissions live or die by the 2-5 minute demo — if a requirement can't be shown compellingly in a demo, it's a weaker candidate for "What we're building." Help the learner think about what will actually *look impressive* when someone watches their video.
-
-### 5. Generate `docs/prd.md`
-
-Read the template at `skills/hackathon-guide/templates/prd-template.md`. Fill it in using everything from the conversation.
+When the learner chooses to proceed, read the template at `skills/hackathon-guide/templates/prd-template.md`. Fill it in using everything from the conversation.
 
 The PRD should feel significantly more substantial than the scope doc. If it's roughly the same length, you haven't expanded enough. The scope doc sketches the idea. The PRD defines every behavior, edge case, and acceptance criterion needed to build it.
 
@@ -85,9 +78,9 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 - Strength of "What we're building" vs "What we'd add with more time" split
 - Whether ambiguities were genuinely surfaced and resolved
 
-### Concept Naming
+### Handoff
 
-"You just did **requirements thinking** — getting specific about what you want before a single line of code is written. Most people skip this and discover problems mid-build. The more explicit your plan, the better your agent can execute it. Run `/spec` when you're ready."
+"Clear your chat and start a fresh session, then run `/spec` when you're ready."
 
 ### Process Notes
 
@@ -96,6 +89,7 @@ Append to `process-notes.md` under the `## /prd` section:
 - What "what if" questions surprised them
 - What they pushed back on or felt strongly about
 - How scope guard conversations went — what got kept, what got deferred
+- **Deepening rounds:** How many rounds did the learner choose? What surfaced in each? Did the extra context strengthen the acceptance criteria or reveal new edge cases?
 - **Active shaping:** Note whether the learner drove requirements or accepted suggestions passively. Record specific moments where they added ideas, challenged your "what if" questions, or made prioritization decisions that surprised you.
 
 ## Conversation Style

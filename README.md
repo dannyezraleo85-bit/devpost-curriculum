@@ -1,25 +1,48 @@
 # devpost-curriculum
 
-A hackathon curriculum that guides you from idea spark to working app in 3–4 hours, delivered as seven agent commands.
+A hackathon curriculum that guides you from idea spark to working app in 3–4 hours, delivered as eight agent commands.
 
-**Commands:** `/scope` → `/prd` → `/spec` → `/checklist` → `/build` → `/iterate` → `/evaluate`
-
-Works with **Claude Code**, **OpenAI Codex**, and **Cursor**.
-
----
+**Commands:** `/onboard` → `/scope` → `/prd` → `/spec` → `/checklist` → `/build` → `/iterate` → `/reflect`
 
 ## Install
-
-### Claude Code
 
 ```
 /plugin marketplace add challengepost/devpost-curriculum
 /plugin install hackathon-in-a-plugin@devpost-curriculum
 ```
 
-Then run `/scope` to start.
+Then run `/onboard` to start.
 
-Requires [Claude Code](https://claude.ai/code) v1.0.33+.
+Requires [Claude Code](https://claude.ai/code).
+
+---
+
+## What's Inside
+
+### hackathon-in-a-plugin
+
+A complete hackathon curriculum built as a set of agent skills. Each command produces artifacts that downstream commands consume — scope doc, PRD, technical spec, build checklist, and reflection.
+
+The curriculum teaches spec-driven development: the planning documents aren't busywork, they're the submission itself. The agent acts as a hackathon coach — brisk, sharp, encouraging — interviewing you through each phase.
+
+**Skills:**
+
+| Command | What it does |
+|---|---|
+| `/onboard` | Welcome, introductions, and learner profile |
+| `/scope` | Brainstorm and refine your idea into a focused project scope |
+| `/prd` | Turn scope into detailed product requirements |
+| `/spec` | Translate PRD into a technical blueprint |
+| `/checklist` | Break the spec into a concrete build checklist |
+| `/build` | Build the app — autonomous (single run) or step-by-step (one item per session) |
+| `/iterate` | Optional polish pass after the build is done |
+| `/reflect` | Wrap up with a quiz, qualitative feedback, and reflection |
+
+---
+
+## Other Platforms
+
+The curriculum also works with OpenAI Codex and Cursor.
 
 ### OpenAI Codex
 
@@ -45,7 +68,7 @@ The `AGENTS.md` at the plugin root also works as a drop-in — copy it to your p
 cp ~/.devpost-curriculum/plugins/hackathon-in-a-plugin/AGENTS.md ./AGENTS.md
 ```
 
-Then run `/scope` to start.
+Then run `/onboard` to start.
 
 ### Cursor
 
@@ -59,29 +82,7 @@ mkdir -p .cursor/rules
 cp ~/.devpost-curriculum/cursor-rules/*.mdc .cursor/rules/
 ```
 
-Then tell the agent: "Let's run /scope" to start the hackathon curriculum.
-
----
-
-## What's Inside
-
-### hackathon-in-a-plugin
-
-A complete hackathon curriculum built as a set of agent skills. Each command produces artifacts that downstream commands consume — scope doc, PRD, technical spec, build checklist, and final evaluation.
-
-The curriculum teaches spec-driven development: the planning documents aren't busywork, they're the submission itself. The agent acts as a hackathon coach — brisk, sharp, encouraging — interviewing you through each phase.
-
-**Skills:**
-
-| Command | What it does |
-|---|---|
-| `/scope` | Brainstorm and refine your idea into a focused project scope |
-| `/prd` | Turn scope into detailed product requirements |
-| `/spec` | Translate PRD into a technical blueprint |
-| `/checklist` | Break the spec into a concrete build checklist |
-| `/build` | Work through checklist items one at a time |
-| `/iterate` | Optional polish pass after the build is done |
-| `/evaluate` | Final evaluation with feedback and reflection |
+Then tell the agent: "Let's run /onboard" to start the hackathon curriculum.
 
 ---
 

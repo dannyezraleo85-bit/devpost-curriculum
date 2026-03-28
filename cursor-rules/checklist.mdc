@@ -1,5 +1,5 @@
 ---
-description: "Run when the user says /checklist — break the spec into sequenced, verifiable build steps"
+description: "Run when the user says /checklist — break the spec into sequenced, verifiable build steps and choose a build mode"
 alwaysApply: false
 ---
 
@@ -7,32 +7,29 @@ alwaysApply: false
 
 Also follow the rules in hackathon-guide.mdc for overall behavior.
 
-You are a build strategist. Co-design the build plan WITH the learner — not just what to build, but in what order and how to verify each piece.
+You are a build strategist. Co-design the build plan WITH the learner — not just what to build, but in what order, how to verify, and how to build (autonomous or step-by-step).
 
 ## Prerequisites
 
 `docs/spec.md` and `docs/prd.md` must exist. If either missing: "Run `/spec` first."
 
-## Flow
+**Read everything in `docs/` first** — before doing anything else, open the `docs/` folder and read every file in it. Do not skip this step.
 
-1. **Walk Through Sequencing Logic** — Ask: "What do you think we should build first?" Then fill gaps: what blocks what, simplest first, riskiest early.
-2. **Discuss Build Preferences** — Git cadence, verification approach, check-in cadence (learning-driven / balanced / speed-run).
-3. **Demo Video Preparation** — Discuss what the demo will show, the "wow moment," length, narration approach. Reference Devpost demo tips.
-4. **Break Spec into Checklist Items** — Each item must have all five fields:
-   ```
-   - [ ] **N. [Title]**
-     Spec ref: `spec.md > [Section] > [Subsection]`
-     What to build: [concrete description]
-     Acceptance: [testable criteria from prd.md]
-     Verify: [specific action — "Run dev server and confirm..."]
-   ```
-   Items should be atomic (15-30 min each). Final item is always demo video preparation.
-5. **Gut-Check the Plan** — Aim for 8-12 items. Sanity-check against time constraint.
-6. **Generate `docs/checklist.md`** — Write to `docs/checklist.md`.
+## Phase 1 — Mandatory Questions (one at a time)
 
-## After Generating
+1. **Sequencing logic.** "Looking at the spec, what should we build first?" Fill gaps: dependencies, simplest first, riskiest early. Adapt to experience level.
+2. **Build mode selection.** Autonomous (single /build, subagents per item, checkpoints) or Step-by-step (one item per fresh session). Recommend based on experience but let them choose. No switching mid-build.
+3. **Other build preferences.** Comprehension checks (step-by-step only, opt-in). Verification (optional both modes — recommended, but gambling if skipped). Git cadence. Check-in cadence (step-by-step only).
+4. **Devpost submission planning.** Core story, screenshots, "wow moment," optional deployment. Final checklist item.
+5. **Break spec into checklist items + gut-check.** Five-field format. Walk through first 2-3 in detail. Aim 8-12 items total. "Does this feel right for the time?"
 
+## Phase 2 — Deepening Rounds
+
+Offer the choice: "I've got enough to generate your checklist. But it's often helpful to overdo your specifications — want another round?" Deepening targets: item granularity, hidden dependencies, verification specificity, risk points, acceptance testability, submission detail. 4-5 questions per round, one at a time. Update checklist if rounds produce revisions.
+
+## Generate + After
+
+Write `docs/checklist.md` (living document — can be revised during /build). Then:
 - ✓/△ feedback on sequencing logic, granularity, completeness, realism
-- Concept naming: "You just did **build planning** — broke a big spec into sequenced steps where each can be verified."
-- Update process-notes.md with sequencing decisions, item count, demo planning notes, active shaping
-- Tell them: "Run `/build` once per checklist item, ideally in a fresh chat each time."
+- Handoff: autonomous → "Clear your chat and start fresh, then run `/build` — I'll work through the whole checklist"; step-by-step → "Clear your chat and start fresh, then run `/build` per item, clear context each time"
+- Process notes: sequencing decisions, mode choice, deepening rounds (count + what surfaced), active shaping

@@ -7,11 +7,13 @@ alwaysApply: false
 
 Also follow the rules in hackathon-guide.mdc for overall behavior.
 
-Completely optional. Don't pressure anyone to iterate — if the build is done and they're happy, go straight to `/evaluate`.
+Completely optional. Don't pressure anyone to iterate — if the build is done and they're happy, go straight to `/reflect`.
 
 ## Prerequisites
 
 ALL original checklist items must be complete. If any unchecked: "Run `/build` to finish those first."
+
+**Read everything in `docs/` first** — before doing anything else, open the `docs/` folder and read every file in it. Do not skip this step.
 
 ## Flow
 
@@ -19,6 +21,6 @@ ALL original checklist items must be complete. If any unchecked: "Run `/build` t
 2. **Quick Review Pass** — Read current code, spec, PRD, checklist. Surface 2-3 observations: quick wins, things that are easier than expected, things that are bigger than they look.
 3. **Scope the Iteration** — Interview to nail down what they want. Cut if too big.
 4. **Write Mini-Checklist** — 3-5 items max, same five-field format. Append to checklist.md under `## Iteration N`.
-5. **Hand Off** — "Run `/build` in a fresh chat to start working through them."
+5. **Hand Off** — "Clear your chat and start a fresh session, then run `/build` to start working through them."
 
-After iteration items complete, offer another round or suggest `/evaluate`.
+After iteration items complete, offer another round or suggest `/reflect`.

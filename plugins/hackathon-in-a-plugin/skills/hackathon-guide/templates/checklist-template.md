@@ -6,9 +6,11 @@
 
 ## Build Preferences
 
+- **Build mode:** [Autonomous / Step-by-step]
+- **Comprehension checks:** [Yes / No / N/A (autonomous mode)]
 - **Git:** [Commit cadence and style — e.g., "Commit after each item with message: 'Complete step N: [title]'"]
-- **Verification:** [How the learner checks each step — e.g., "Run dev server and visually confirm"]
-- **Check-in cadence:** [Learning-driven / balanced / speed-run — how much discussion during build]
+- **Verification:** [Yes / No. Step-by-step: per-item verification. Autonomous: checkpoints every 3-4 items. If No, verification is skipped.]
+- **Check-in cadence:** [Step-by-step only: Learning-driven / balanced / speed-run — how much discussion during build. N/A for autonomous.]
 
 ## Checklist
 
@@ -26,10 +28,10 @@
 
 <!-- Continue for all items. Typical project: 8-12 items, each 15-30 minutes.
      Sequence respects dependencies — earlier items unblock later ones.
-     Last item is always demo video preparation. -->
+     Last item is always Devpost submission. -->
 
-- [ ] **N. Prepare and record Devpost demo video**
-  Spec ref: `prd.md > What We're Building` (the core flow to demonstrate)
-  What to build: Script a 2-5 minute demo walkthrough. Open with the problem (10-15 sec), show the app's core flow in action, close with what you learned or what you'd build next. Record with clear audio and visible UI.
-  Acceptance: Video clearly shows the app working. Problem statement is stated upfront. Core user flow is demonstrated. Audio is clear and narration is coherent.
-  Verify: Watch the recording end to end. Would a judge who knows nothing about your project understand what it does and why it matters?
+- [ ] **N. Submit your project to Devpost**
+  Spec ref: `prd.md > What We're Building` (the core submission story)
+  What to build: Walk through the Devpost submission form. Write a project name and tagline. Draft the project story using scope.md and prd.md as source material — explain what you built, why, and what you learned. Add "built with" tags for your tech stack. Take screenshots of the working app for the image gallery. Upload your docs/ folder artifacts (scope, PRD, spec, checklist). Link your code repository. Optionally, link a deployed app or a demo video (YouTube/Vimeo). Review everything and submit.
+  Acceptance: Submission is live on Devpost with project name, tagline, description, built-with tags, screenshots, docs artifacts, and repo link. All required fields are complete.
+  Verify: Open your Devpost submission page and confirm the green "Submitted" badge appears. Read the project description — would someone who knows nothing about your project understand what it does and why it matters?

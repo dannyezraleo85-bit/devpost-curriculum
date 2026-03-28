@@ -25,12 +25,5 @@ Concrete description of the finished product after 3-4 hours.
 ## What's Explicitly Cut
 Named features, use cases, or scope that is OUT. With brief rationale.
 
-## Technical Experience
-Experience level (first-time dev, junior, senior, etc.).
-Languages, frameworks the learner knows. What they don't know.
-What they want to explore.
-This calibrates every downstream command — spec, checklist, build
-conversations all adapt based on this.
-
 ## Loose Implementation Notes
 Early thinking on approach. Non-binding. Gets refined in /spec.

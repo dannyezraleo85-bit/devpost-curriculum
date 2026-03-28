@@ -45,12 +45,12 @@ These patterns are drawn from analyzing Devpost hackathon winners (TreeHacks, Wo
 - **Hackathon tradeoffs:** The "frontend" is someone else's problem. Focus on the logic.
 
 ### What Devpost Winners Have in Common
-Based on research of winning projects and serial hackathon winners ([Devpost judging criteria](https://info.devpost.com/blog/understanding-hackathon-submission-and-judging-criteria)):
+Based on research of winning Devpost projects and serial hackathon winners:
 - **Strong concept > technical complexity.** Winners solve real problems simply, not complex problems elaborately. Judges consistently value clear problem-solving over impressive-but-unfocused technical feats.
-- **Polished presentation matters enormously.** Demo video quality often separates winners from the pack. Script it, use good audio, show the app in action. See [Devpost's demo video tips](https://info.devpost.com/blog/6-tips-for-making-a-hackathon-demo-video).
-- **BaaS over custom backends.** Supabase, Firebase, and Streamlit Cloud dominate because they eliminate backend boilerplate. [KeyHaven](https://devpost.com/software/keyhaven) (World's Largest Hackathon winner) used React/Vite + Supabase + Stripe.
-- **AI/LLM integration is near-universal** in 2025-2026 winners. OpenAI, Anthropic, or open-source model APIs appear in most top projects. Major hackathons now have dedicated AI/agent tracks ([Kong Agentic AI Hackathon](https://konghq.com/blog/news/winners-of-kong-agentic-ai-hackathon), [Berkeley LLM Agents Hackathon](https://rdi.berkeley.edu/llm-agents-hackathon/)).
-- **Plan before you build.** [Serial winner Oleksandr](https://info.devpost.com/blog/user-story-oleksandr) (won 7 of 15 hackathons) explicitly maps databases, model hosting, code interactions, and deployment strategy before writing code. His approach: spend time thinking before coding, use a proven stack (Python + Streamlit), and focus on a strong idea.
+- **Polished presentation matters enormously.** A clear project description, good screenshots, and a compelling submission page separate winners from the pack.
+- **BaaS over custom backends.** Supabase, Firebase, and Streamlit Cloud dominate because they eliminate backend boilerplate. Winning projects consistently use these to spend time on the product, not the plumbing.
+- **AI/LLM integration is near-universal** in recent winners. OpenAI, Anthropic, or open-source model APIs appear in most top projects. Major hackathons now have dedicated AI/agent tracks.
+- **Plan before you build.** Serial hackathon winners explicitly map databases, model hosting, code interactions, and deployment strategy before writing code. The approach: spend time thinking before coding, use a proven stack, and focus on a strong idea.
 
 ## Diagramming
 
@@ -140,17 +140,19 @@ If the app talks to any external service (Supabase, OpenAI, a third-party API), 
 ### Error Boundaries and Fallbacks
 Not exhaustive error handling — just the 2-3 places where things will actually break during a demo. What if the API is slow? What if the database is empty? What if the user's input is weird? Decide on a simple strategy: show a loading spinner, show a helpful error message, fall back to sample data. Keep it hackathon-appropriate.
 
-### Demo Flow
-What will the learner actually show in their 2-5 minute demo video? Walk through the demo flow now and make sure the architecture supports it. If the coolest feature requires a complex setup to demonstrate, that's a spec problem worth solving early. This is especially important for Devpost hackathons where the demo video IS the submission.
+### Submission & Demo Flow
+What will judges see on the Devpost submission page? Walk through the key screenshots and flows now — make sure the architecture supports a compelling presentation. If the coolest feature requires a complex setup to demonstrate, that's a spec problem worth solving early. The submission page is how judges experience the project.
+
+If the learner wants to deploy the app for a live link, discuss options appropriate to their stack (Vercel, Netlify, GitHub Pages, Railway, Fly.io, etc.) and make sure the architecture supports easy deployment. A deployed link strengthens the submission but isn't required.
 
 ## Deployment Considerations
 
 Ask once where the learner plans to run their app:
-- **Local demo:** Simplest. Just needs to run on localhost. Note any environment requirements.
-- **Deployed URL:** Note target platform (Vercel, Netlify, Railway, Fly.io, etc.). Include deployment steps in spec.
-- **Screen recording only:** No deployment needed. Note that the demo video is the deliverable.
+- **Local only:** Simplest. Just needs to run on localhost. Screenshots and description carry the submission.
+- **Deployed URL:** Note target platform (Vercel, Netlify, GitHub Pages, Railway, Fly.io, etc.). Include deployment steps in spec. If the learner wants to deploy but doesn't know how, help them pick an option that fits their stack.
+- **Optional demo video:** The learner can record a short video and upload to YouTube or Vimeo. Not required for this hackathon, but it can strengthen the submission.
 
-For Devpost hackathons, submissions typically include a demo video (2-5 min screen recording) and optionally a live URL. Most learners will demo locally — that's fine. Don't over-invest in deployment unless the learner specifically wants a live URL.
+Most learners will run locally and submit with screenshots — that's fine. Don't over-invest in deployment unless the learner specifically wants a live URL.
 
 ## Architecture Self-Review
 
