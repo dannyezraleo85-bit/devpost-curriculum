@@ -31,5 +31,5 @@ Offer the choice: "I've got enough to generate your checklist. But it's often he
 
 Write `docs/checklist.md` (living document — can be revised during /build). Then:
 - ✓/△ feedback on sequencing logic, granularity, completeness, realism
-- Handoff: autonomous → "Clear your chat and start fresh, then run `/build` — I'll work through the whole checklist"; step-by-step → "Clear your chat and start fresh, then run `/build` per item, clear context each time"
+- Handoff: autonomous → "Run `/clear`, then run `/build` — I'll work through the whole checklist"; step-by-step → "Run `/clear`, then run `/build` per item, run `/clear` between each"
 - Process notes: sequencing decisions, mode choice, deepening rounds (count + what surfaced), active shaping

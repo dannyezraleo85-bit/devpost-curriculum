@@ -23,10 +23,11 @@ Must exist: `docs/scope.md`, `docs/prd.md`, `docs/spec.md`, `docs/checklist.md`.
 
 Frame it: "Before we look at your project, a few quick questions about the process. No wrong answers."
 
-Provisional questions (align with companion video when available):
-1. "If you had a new idea tomorrow and a coding agent, what would you do before writing code?"
-2. "Why did we write all those documents instead of just telling the agent to build?"
-3. "What's one thing you'd do differently next time?"
+Questions (aligned with companion video concepts):
+1. **Context.** "The video said 'context is everything.' What does that mean to you now?" — Looking for: planning docs and interviews = rich context for the AI.
+2. **Flipped interaction.** "Why did I ask you questions instead of you prompting me?" — Looking for: better/richer information through interview than conventional prompting.
+3. **Structural problems.** "The video mentioned chatbot amnesia and context rot. Did our process address those?" — Looking for: clearing chat fights context rot, planning docs fight amnesia, structured process prevents getting lost.
+4. **Reflection.** "What would you do differently next time?" — Genuine reflection, no wrong answer.
 
 Don't score. Transition naturally to feedback.
 
@@ -47,7 +48,8 @@ If mostly passive, address constructively: risks of letting the agent drive on l
 
 ## After Review
 
-- Ask reflection question: "Looking back — what surprised you most?"
-- React to their answer
+- Goals check-in: pull their goals from learner-profile.md, ask "Do you feel like you got there?" — their self-assessment, not yours
+- Open reflection: "Looking back — what surprised you most?"
+- React to both answers
 - Generate `docs/reflection.md`
 - Closing: "You completed a full spec-driven development cycle. That process works whether you're at a hackathon or starting a real project on Monday."

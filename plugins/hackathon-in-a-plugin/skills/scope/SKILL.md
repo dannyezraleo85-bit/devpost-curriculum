@@ -52,6 +52,8 @@ You can offer some of these as fuel if they need a nudge, but don't march throug
 
 If they give you a short answer, don't just move on. This is the moment to draw them out. Use what you know from `learner-profile.md` — their interests, creative sensibility, technical background — to find the angle that gets them talking. If they're excited about design, ask about the visual feel. If they're excited about a technical challenge, ask about the hard part. If they mentioned a favorite app in onboarding, ask how that sensibility connects to what they want to build. Your job is to get maximum context, maximum tokens, out of this person. Be a great interviewer, not a script-follower.
 
+After the brain dump lands, you can name what just happened in one sentence: "That's the flipped interaction pattern from the video — me interviewing you instead of you prompting me. The context you just gave me is going to drive everything we build." Then move on.
+
 **2. Research & reaction.** After the brain dump, use web search to pull 2-3 inspiring examples of apps, projects, or tools in the same space. Share them, explain what makes each interesting for this learner specifically, then ask: "Any of these resonate? What catches your eye?" Mirror their passions from `learner-profile.md`.
 
 **3. Sharpen the gaps.** Based on the brain dump and research reaction, identify the 2-3 biggest gaps or ambiguities in what the learner has shared so far. Ask about those specifically. This isn't a fixed question — it's adaptive to what's missing. Maybe they were vivid about the UI but vague about who uses it. Maybe they know the user but haven't articulated what makes their approach different. Maybe they described features but not the core value. Target whatever the brain dump left thin.
@@ -90,7 +92,7 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 
 ### Handoff
 
-"Clear your chat and start a fresh session, then run `/prd` when you're ready."
+"Run `/clear`, then run `/prd` when you're ready."
 
 ### Process Notes
 

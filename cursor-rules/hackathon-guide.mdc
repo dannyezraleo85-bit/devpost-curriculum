@@ -25,7 +25,7 @@ Each command produces artifacts that downstream commands consume. The chain is l
 - Guard rails: every command checks prerequisite artifacts. If missing, name the command to run and stop.
 - Tone: hackathon energy, brisk pace, concise feedback (2-4 sentences max for embedded feedback).
 - Embedded feedback uses ✓/△ format. Tight.
-- Handoff: at the end of each command, tell the learner to clear chat and run the next command. Brief, no teaching moment.
+- Handoff: at the end of each command, tell the learner to run `/clear` and then run the next command. Brief, no teaching moment.
 - Active engagement: the learner should actively shape every decision. Log passivity vs activity in process-notes.
 - **One question at a time.** Never ask the learner multiple questions in a single message.
 - **Free-form questions only** for all interview/planning questions. No multiple-choice. **One exception:** comprehension checks during /build use AskUserQuestion (multiple choice).
@@ -33,7 +33,7 @@ Each command produces artifacts that downstream commands consume. The chain is l
 - **Deepening rounds** in every planning command (/scope, /prd, /spec, /checklist): Phase 1 = mandatory questions (bare minimum for the document). Phase 2 = repeatable deepening rounds — after mandatory questions, offer: "It's often helpful to overdo your specifications — another round, or proceed?" Deepening questions target edge cases, ambiguities, creative refinements, pull from learner-profile.md interests. 4-5 questions per round, one at a time. Learner loops as many times as they want. Log rounds in process notes — evaluated in /reflect.
 - **Mandatory beats are guidelines, not rigid scripts.** Stay flexible and adaptive. If an answer covers the next beat, don't force it. If the learner brings up something important outside the beats, follow it. Skip beats that don't apply. The goal is the information, not checking boxes.
 - **Read all docs before every command.** Before doing anything else, open `docs/` and read every file in it. This is critical and non-negotiable — agents that skip reading upstream artifacts produce worse output.
-- **Clear chat between commands.** At the end of every command, tell the learner to clear their chat and start a fresh session before running the next command. Fresh context prevents context rot and gives the agent maximum room.
+- **`/clear` between commands.** At the end of every command, tell the learner to run `/clear` before running the next command. This fights context rot and gives the agent a fresh start. The docs persist — the AI reads them fresh each session.
 
 ## Adapting to Experience Level
 
@@ -45,7 +45,7 @@ Read technical experience from `docs/learner-profile.md` (once it exists). Calib
 ## Build Modes and Command Frequency
 
 `/build` behavior depends on the mode chosen in `/checklist`:
-- **Step-by-step:** Run once per checklist item in a fresh session each time. Clear context between runs. Verification and comprehension checks are optional.
+- **Step-by-step:** Run once per checklist item in a fresh session each time. Run `/clear` between items. Verification and comprehension checks are optional.
 - **Autonomous:** Single invocation. Orchestrator dispatches each item to a subagent via `Agent` tool. Optional verification checkpoints every 3-4 items.
 - **Both modes:** Checklist is a living document. If something breaks, stop, propose reverting to last clean state, revise checklist with learner, then resume. No mode switching mid-build.
 

@@ -36,4 +36,4 @@ Offer the choice: "I've got enough to generate your spec. But it's often helpful
 Write `docs/spec.md`. Every component gets its own heading. Cross-reference PRD epics. Include file tree, data flow diagrams, doc links. Then:
 - ✓/△ feedback on completeness, stack sensibility, realism, documentation quality
 - Process notes: technical decisions, deepening rounds (count + what surfaced), active shaping
-- Handoff: tell them to clear their chat and start a fresh session, then run `/checklist`
+- Handoff: tell them to run `/clear`, then run `/checklist`

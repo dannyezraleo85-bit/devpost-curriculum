@@ -49,7 +49,7 @@ This is a gut check, not a grade. Keep it tight. This feedback pattern is design
 
 ## Handoff
 
-At the end of each command, after embedded feedback and process notes, tell the learner to clear their chat, start a fresh session, and run the next command. Keep it brief — no teaching moment, just the transition.
+At the end of each command, after embedded feedback and process notes, tell the learner to run `/clear`, then run the next command. Keep it brief — no teaching moment, just the transition.
 
 ## Adapting to Experience Level
 
@@ -68,7 +68,7 @@ Each command produces artifacts that downstream commands consume. The chain is l
 
 **`/build` behavior depends on the build mode chosen in `/checklist`:**
 
-- **Step-by-step mode:** `/build` runs once per checklist item, in a fresh chat session each time. The learner should clear their context between runs to give the agent maximum room to work. Each invocation picks up the next unchecked item. Verification and comprehension checks are optional per the learner's preference. Process notes are logged per item.
+- **Step-by-step mode:** `/build` runs once per checklist item, in a fresh chat session each time. The learner runs `/clear` between items to fight context rot. Each invocation picks up the next unchecked item. Verification and comprehension checks are optional per the learner's preference. Process notes are logged per item.
 - **Autonomous mode:** `/build` runs once and works through the entire checklist. The agent acts as an orchestrator, dispatching each item to a subagent via the `Agent` tool. If the learner opted into verification, the agent pauses at checkpoints every 3-4 items for the learner to review. No per-item process notes — just a summary at the end.
 - **In both modes**, the checklist is a living document. If something breaks, the agent stops, proposes reverting to the last clean state, and works with the learner to revise the checklist before resuming. Plans adapt when they meet reality.
 - **No mode switching mid-build.** The choice made in `/checklist` is locked in.

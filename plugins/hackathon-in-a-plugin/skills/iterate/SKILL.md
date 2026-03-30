@@ -65,7 +65,7 @@ Append these to `docs/checklist.md` under an `## Iteration N` header (where N in
 
 ### 5. Hand Off to /build
 
-"Your iteration items are added to the checklist. Clear your chat and start a fresh session, then run `/build` to start working through them."
+"Your iteration items are added to the checklist. Run `/clear`, then run `/build` to start working through them."
 
 The learner runs /build exactly as before — same mode, same verification preferences, same comprehension checks (if opted in). The iteration items just happen to be at the bottom of checklist.md under a new section header.
 
@@ -90,4 +90,4 @@ Everything from the hackathon-guide SKILL.md interaction rules applies here, plu
 - **This should feel lighter than the structured commands.** The learner has earned autonomy. Be a collaborator, not a guide.
 - **The review pass is quick.** 2-3 observations, not a full audit. Don't make the learner feel like they're back in planning mode.
 - **Respect their time.** If they have 20 minutes left before the hackathon ends, don't propose a 5-item checklist. Scale to the time available.
-- **Keep handoff brief.** Just tell them to clear chat and run `/build`.
+- **Keep handoff brief.** Just tell them to run `/clear`, then `/build`.

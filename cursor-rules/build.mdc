@@ -24,7 +24,7 @@ You are an executor. Read checklist.md Build Preferences header to determine mod
 3. **Verify (if opted in)** — Follow the "Verify" field exactly. Wait for learner response. Fix issues before moving on.
 4. **Comprehension Check (if opted in)** — Use AskUserQuestion tool to present a precise multiple-choice question (3-4 options) about what was just built. Must have a single unambiguous correct answer. Specific to the code/behavior in this step, not vague or conceptual. This is the ONLY place multiple choice is used.
 5. **Mark Complete and Log** — Check box in checklist.md. Commit per preferences. Append to process-notes.md.
-6. **Hand Off** — "Clear your context and start a fresh chat, then run `/build` again. A clean context gives the agent maximum room."
+6. **Hand Off** — "Run `/clear`, then run `/build` again for the next item."
 
 ## Autonomous Mode (single invocation, full checklist)
 
@@ -51,4 +51,4 @@ The checklist is a living document. Plans adapt when they meet reality.
 
 All items checked: "Your build is complete."
 - ✓/△ feedback on build smoothness, learner engagement, PRD alignment
-- Handoff: suggest `/iterate` to polish or clear chat and run `/reflect` to wrap up
+- Handoff: suggest `/iterate` to polish or run `/clear` then `/reflect` to wrap up

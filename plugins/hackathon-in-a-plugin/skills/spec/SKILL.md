@@ -90,7 +90,7 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 
 ### Handoff
 
-"Clear your chat and start a fresh session, then run `/checklist` when you're ready."
+"That spec is the heart of spec-driven development — everything from here flows from it. Run `/clear`, then run `/checklist` when you're ready."
 
 ### Process Notes
 

@@ -37,4 +37,4 @@ Offer the choice: "I've got enough to generate your scope doc. But it's often he
 Write `docs/scope.md`. Then:
 - ✓/△ feedback on clarity, specificity, realism, what's-cut decisions
 - Process notes: idea evolution, pushback, deepening rounds (count + what surfaced), active shaping
-- Handoff: tell them to clear their chat and start a fresh session, then run `/prd`
+- Handoff: tell them to run `/clear`, then run `/prd`

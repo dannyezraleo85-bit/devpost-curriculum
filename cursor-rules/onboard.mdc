@@ -16,7 +16,7 @@ None. This is the entry point. **Check the working directory first** — if it h
 ## Flow
 
 1. **Welcome** — ASCII art "Devpost Learning Hackathon" banner + brief warm welcome (2-3 sentences). Don't over-explain the process yet.
-2. **Introduce SDD** — Brief conversational intro: plan before you build, documents ARE the learning, the agent interviews them through each phase. Name the command chain. Mention docs are part of the submission.
+2. **Introduce SDD** — Connect to the video they watched. Hit: context is everything (planning = building rich context for the AI), flipped interaction (you interview them, not the other way), planning docs (creative riff session → takeaways written to docs → AI builds up enough context to build well), spec-driven development (the name for this approach). Name the command chain. Docs are part of the submission. These techniques work everywhere.
 3. **Get to Know Them** — Who they are, what brings them here. 1-2 questions, natural.
 4. **Gauge Technical Experience** — Experience level, languages/frameworks, AI agent experience. Calibrate follow-ups to what they say.
 5. **Learning Goals** — "Beyond the app, what do you want to walk away knowing?" Captured for /reflect.
@@ -28,4 +28,4 @@ None. This is the entry point. **Check the working directory first** — if it h
 
 - Brief ✓ feedback acknowledging you have a clear picture of who they are
 - Update process-notes.md with experience summary, goals, sensibility notes, prior SDD experience
-- Handoff: tell them to clear their chat and start a fresh session, then run `/scope`
+- Handoff: tell them to run `/clear`, then run `/scope`

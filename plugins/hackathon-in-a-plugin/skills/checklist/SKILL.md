@@ -172,8 +172,8 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 
 ### Handoff
 
-- **If autonomous mode:** "Clear your chat and start a fresh session, then run `/build` when you're ready. I'll work through the whole checklist and pause at checkpoints for you to verify."
-- **If step-by-step mode:** "Clear your chat and start a fresh session, then run `/build` when you're ready — you'll run it once per checklist item. Clear your context and start a fresh chat each time so the agent has maximum room to work. Each run picks up the next unchecked step."
+- **If autonomous mode:** "Run `/clear`, then run `/build` when you're ready. I'll work through the whole checklist and pause at checkpoints for you to verify."
+- **If step-by-step mode:** "Run `/clear`, then run `/build` when you're ready — you'll run it once per checklist item. Run `/clear` between each item so the agent gets a fresh context. Each run picks up the next unchecked step."
 
 ### Process Notes
 

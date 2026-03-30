@@ -36,4 +36,4 @@ Offer the choice: "I've got enough to generate your PRD. But it's often helpful 
 Write `docs/prd.md` (should be substantially more detailed than scope doc). Then:
 - ✓/△ feedback on story completeness, acceptance criteria quality, scope split, ambiguity resolution
 - Process notes: changes vs scope, surprising "what if" questions, deepening rounds (count + what surfaced), active shaping
-- Handoff: tell them to clear their chat and start a fresh session, then run `/spec`
+- Handoff: tell them to run `/clear`, then run `/spec`

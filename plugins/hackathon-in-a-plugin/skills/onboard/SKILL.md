@@ -27,23 +27,12 @@ None. This is the entry point for the entire curriculum.
 Open with energy. Display this ASCII art welcome banner:
 
 ```
-    ____                             __
-   / __ \___ _   ______  ____  _____/ /_
-  / / / / _ \ | / / __ \/ __ \/ ___/ __/
- / /_/ /  __/ |/ / /_/ / /_/ (__  ) /_
-/_____/\___/|___/ .___/\____/____/\__/
-               /_/
-    __                          _
-   / /   ___  ____ __________  (_)___  ____
-  / /   / _ \/ __ `/ ___/ __ \/ / __ \/ __ `/
- / /___/  __/ /_/ / /  / / / / / / / / /_/ /
-/_____/\___/\__,_/_/  /_/ /_/_/_/ /_/\__, /
-                                    /____/
-    __  __           __         __  __
-   / / / /___ ______/ /______ _/ /_/ /_  ____  ____
-  / /_/ / __ `/ ___/ //_/ __ `/ __/ __ \/ __ \/ __ \
- / __  / /_/ / /__/ ,< / /_/ / /_/ / / / /_/ / / / /
-/_/ /_/\__,_/\___/_/|_|\__,_/\__/_/ /_/\____/_/ /_/
+ _____  ________      _______   ____   _____ _______
+|  __ \|  ____\ \    / /  __ \ / __ \ / ____|__   __|
+| |  | | |__   \ \  / /| |__) | |  | | (___    | |
+| |  | |  __|   \ \/ / |  ___/| |  | |\___ \   | |
+| |__| | |____   \  /  | |    | |__| |____) |  | |
+|_____/|______|   \/   |_|     \____/|_____/   |_|
 ```
 
 Then a brief, warm welcome — something like: "Welcome to the Devpost Learning Hackathon! Over the next few hours, you're going to go from an idea to a working app — and you'll learn a process you can reuse on any project. Let's start by getting to know each other."
@@ -52,23 +41,20 @@ Keep the welcome to 2-3 sentences after the banner. Don't over-explain the whole
 
 ### 2. Introduce Spec-Driven Development
 
-Give a brief, conversational introduction to the core idea. The learner needs just enough context to understand what they're about to do and why.
+Give a brief, conversational introduction that connects to what they learned in the video. The learner has already seen the concepts — your job is to ground them in what's about to happen, not re-teach the theory.
 
-<!-- PLACEHOLDER: SDD introduction content
-     This introduction should align with the companion video's explanation of
-     spec-driven development. When the video script is finalized, update this
-     section to match its framing and terminology precisely.
+Cover these points naturally (not as a list — weave them conversationally):
 
-     For now, cover these essentials conversationally: -->
-
-Cover these points naturally (not as a list — weave them into 2-3 sentences):
-- You're going to plan before you build. The planning documents ARE the learning.
-- The process: you'll scope your idea, define requirements, write a technical spec, plan the build, then build it — step by step.
-- The agent (that's you) will interview them through each phase. They drive the decisions.
+- **Context is everything.** Remind them of the core idea from the video: the quality of what the AI builds depends entirely on the context you give it. That's what this whole process is about — building up fantastically rich context before any code gets written.
+- **Flipped interaction.** This is how we'll work together. Instead of them prompting you, you'll interview them — asking open-ended questions, each building on their answers. Like the video said, this fills the context window with much richer information than conventional prompting ever could. If they remember one thing from the video, it's this pattern.
+- **Planning docs.** The interviews lead to a series of planning documents you'll co-write together — like a creative riff session with a really smart friend. Each doc captures the takeaways, and gradually the AI builds up enough context to know exactly how to build their app. Then they delegate the coding.
+- **Spec-driven development.** That's the name for this whole approach: meticulously planning with the AI before setting it loose on code. The "spec" is the centerpiece, but they'll create several docs along the way.
 
 Then name the full command chain: `/onboard` (that's now) → `/scope` → `/prd` → `/spec` → `/checklist` → `/build` → `/iterate` (optional) → `/reflect`.
 
-Mention that the documents they create through this process are a real part of their hackathon submission — they're not throwaway scaffolding.
+Mention that the documents they create through this process are a real part of their hackathon submission — they're not throwaway scaffolding. And remind them that these techniques work everywhere, even outside this plugin.
+
+**Introduce `/clear` and context rot.** Tell them: "Remember context rot from the video? AI performance gets worse as conversations get longer. That's why after each command, I'll ask you to run `/clear` — it wipes the conversation and gives the AI a fresh start. Don't worry about losing anything — all the important stuff lives in the docs we write together. The AI reads those fresh each time. So the flow is: finish a command, run `/clear`, then run the next command."
 
 ### 3. Get to Know the Learner
 
@@ -135,7 +121,7 @@ If they shared something particularly interesting or specific, acknowledge it: "
 
 ### Handoff
 
-"Great — I've got everything I need. Clear your chat and start a fresh session, then run `/scope` — that's where we'll find your idea."
+"Great — I've got everything I need. Run `/clear`, then run `/scope` — that's where we'll find your idea."
 
 ### Process Notes
 

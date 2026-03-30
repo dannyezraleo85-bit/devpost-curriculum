@@ -36,28 +36,21 @@ If any are missing, list what's missing and point to the relevant command. Evalu
 
 ## Part A — Conversational Quiz
 
-A short, casual, dialogical check-in — 3-4 questions, one at a time, free-form. This is not a test. It's a conversation to see if the learner internalized the workflow and can articulate why spec-driven development matters.
-
-<!-- PLACEHOLDER: Quiz content
-     The questions below are provisional. They should align precisely with the
-     companion video's learning standards. When the video script or learning
-     standards are finalized, replace the questions below with ones that match.
-
-     Keep the format: 3-4 free-form questions, one at a time, conversational.
-     The agent reacts to each answer — clarifies gently if something's off,
-     affirms if they've got it, then moves to the next question. -->
+A short, casual, dialogical check-in — 3-4 questions, one at a time, free-form. This is not a test. It's a conversation to see if the learner internalized the core concepts from the video and the hands-on experience. The agent reacts to each answer — clarifies gently if something's off, affirms if they've got it, then moves to the next question.
 
 ### How to run the quiz
 
 Frame it casually: "Before we look at your project, I want to do a quick check-in — just a few questions about the process we went through. No wrong answers, just curious what stuck."
 
-**Provisional questions (replace when learning standards are finalized):**
+**Questions (aligned with the companion video's core concepts):**
 
-1. "If you sat down tomorrow with a new project idea and a coding agent, what would you do before writing any code?" — Looking for: some version of planning/scoping/speccing before building. The specific vocabulary doesn't matter.
+1. **Context.** "The video said 'context is everything.' Now that you've been through the whole process — what does that actually mean to you? How did context show up in what we did?" — Looking for: understanding that the planning docs, the interviews, the specificity of the PRD and spec — all of it was about building up rich context so the AI could do great work. They don't need to say "context window" but they should connect the planning work to the quality of the build.
 
-2. "Why do you think we wrote all those documents (scope, PRD, spec) instead of just telling the agent to build something?" — Looking for: understanding that explicit planning leads to better agent output, prevents rework, helps the learner stay in control.
+2. **Flipped interaction.** "We spent a lot of time with me asking you questions instead of you prompting me. Why do you think we did it that way?" — Looking for: some version of "I gave better/more information when I was being interviewed than I would have if I just typed a prompt." Bonus if they connect it to the speech-to-text advice or mention discovering ideas they wouldn't have otherwise had.
 
-3. "What's one thing you'd do differently if you ran through this process again?" — Looking for: genuine reflection. There's no wrong answer here — the value is in the thinking.
+3. **Structural problems.** "The video talked about some problems that happen when people jump straight to building with AI — things like chatbot amnesia and context rot. Do you feel like the process we went through addressed any of those? How?" — Looking for: understanding that clearing chat between commands fights context rot, that the planning docs fight chatbot amnesia (the AI reads them fresh each session), and that the structured process kept them from getting out over their skis with code they don't understand.
+
+4. **Reflection.** "What's one thing you'd do differently if you ran through this process again?" — Looking for: genuine reflection. There's no wrong answer here — the value is in the thinking.
 
 ### After the quiz
 
@@ -128,9 +121,11 @@ After all five dimensions, loop back to the learner's stated goals and connect t
 
 ### Reflect Together
 
-Ask one question: "Looking back at the whole process — from scoping to building — what surprised you most?"
+Two questions, one at a time:
 
-Let them answer. React to what they say. If their reflection shows genuine insight, acknowledge it. If they're stuck, offer an observation: "I noticed you got more confident during the spec conversation — your questions got sharper. That's the kind of growth that compounds."
+**1. Goals check-in.** Pull the learner's stated goals from `docs/learner-profile.md` and ask them directly: "At the start, you told me you wanted to [their goal]. Do you feel like you got there?" Let them answer honestly. Don't grade them — react to what they say. If they feel good about it, acknowledge that. If they feel like they fell short, explore why and what they'd do differently. This is their self-assessment, not yours.
+
+**2. Open reflection.** "Looking back at the whole process — from scoping to building — what surprised you most?" If their reflection shows genuine insight, acknowledge it. If they're stuck, offer an observation: "I noticed you got more confident during the spec conversation — your questions got sharper. That's the kind of growth that compounds."
 
 ### Generate `docs/reflection.md`
 

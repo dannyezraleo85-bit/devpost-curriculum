@@ -80,7 +80,7 @@ Provide 2-4 sentences using ✓/△ markers. Evaluate:
 
 ### Handoff
 
-"Clear your chat and start a fresh session, then run `/spec` when you're ready."
+"Run `/clear`, then run `/spec` when you're ready."
 
 ### Process Notes
 
